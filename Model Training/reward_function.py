@@ -43,3 +43,10 @@ def reward_function(params):
 
     # Always return a float value
     return float(reward)
+
+
+# Result : 
+# My Qualifying Time: 01:25.926 (Under 2 minutes but room for improvment)
+# Best Time World : 00:55.530
+# Best Time India : 00:56.531
+# Best Time Asia Pacific: 00:56.531
