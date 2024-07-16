@@ -18,8 +18,7 @@ def reward_function(params):
     marker_1 = 0.1 * track_width
     marker_2 = 0.25 * track_width
     marker_3 = 0.5 * track_width
-    # marker_4 = 0.4 * track_width
-    # marker_5 = 0.5 * track_width
+    
 
     # Base reward
     reward = 1e-3
@@ -33,18 +32,8 @@ def reward_function(params):
             reward += 1.5
         elif distance_from_center <= marker_3:
             reward += 0.5
-        # elif distance_from_center <= marker_4 and all_wheels_on_track:
-        #     reward += 1.0 
-        # elif distance_from_center <= marker_5 and all_wheels_on_track:
-        #     reward += 0.5
         else:
             reward = 1e-3  # likely off track or far from center
-
-        # Additional reward for speed
-        # if speed < SPEED_THRESHOLD:
-        #     reward -= 0.5  # Penalize for going too slow
-        # else:
-        #     reward += 1.4  # Reward for going above the speed threshold
 
         # Speed Reward
         speed_diff = abs(1.0 - speed)
@@ -79,11 +68,6 @@ def reward_function(params):
     progress_reward = progress / 100.0  # Normalize progress to [0, 1]
     reward += progress_reward
     
-    # Steps Reward
-    # if (steps % 100) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
-    #     reward += 10.0
-
-
-
+    
     # Always return a float value
     return float(reward)
