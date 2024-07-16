@@ -16,10 +16,10 @@ def reward_function(params):
 
     # Calculate markers that are at varying distances from the center
     marker_1 = 0.1 * track_width
-    marker_2 = 0.2 * track_width
-    marker_3 = 0.3 * track_width
-    marker_4 = 0.4 * track_width
-    marker_5 = 0.5 * track_width
+    marker_2 = 0.25 * track_width
+    marker_3 = 0.5 * track_width
+    # marker_4 = 0.4 * track_width
+    # marker_5 = 0.5 * track_width
 
     # Base reward
     reward = 1e-3
@@ -27,16 +27,16 @@ def reward_function(params):
     # Reward based on distance from the center
     if all_wheels_on_track:
 
-        if distance_from_center <= marker_1 and all_wheels_on_track:
+        if distance_from_center <= marker_1:
             reward += 3.0
-        elif distance_from_center <= marker_2 and all_wheels_on_track:
+        elif distance_from_center <= marker_2:
             reward += 2.5
-        elif distance_from_center <= marker_3 and all_wheels_on_track:
+        elif distance_from_center <= marker_3:
             reward += 1.5
-        elif distance_from_center <= marker_4 and all_wheels_on_track:
-            reward += 1.0 
-        elif distance_from_center <= marker_5 and all_wheels_on_track:
-            reward += 0.5
+        # elif distance_from_center <= marker_4 and all_wheels_on_track:
+        #     reward += 1.0 
+        # elif distance_from_center <= marker_5 and all_wheels_on_track:
+        #     reward += 0.5
         else:
             reward = 1e-3  # likely off track or far from center
 
