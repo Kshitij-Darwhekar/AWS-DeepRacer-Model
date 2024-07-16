@@ -1,3 +1,13 @@
+# Result : 
+# My Qualifying Time: 01:25.926 (Under 2 minutes but room for improvment)
+# Best Time World : 00:55.530
+# Best Time India : 00:56.531
+# Best Time Asia Pacific: 00:56.531
+# My Rank: 337/617 (India)
+
+
+
+
 def reward_function(params):
     # Read input parameters
     all_wheels_on_track = params['all_wheels_on_track']
