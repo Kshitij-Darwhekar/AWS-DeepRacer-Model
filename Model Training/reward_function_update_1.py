@@ -4,15 +4,15 @@ def reward_function(params):
     distance_from_center = params['distance_from_center']
     track_width = params['track_width']
     speed = params['speed']
-    abs_steering = abs(params['steering_angle'])
+    steering_angle = params['steering_angle']
     is_crashed = params['is_crashed']
     progress = params['progress']
-    steps = params['steps']
+    # steps = params['steps']
 
 
     SPEED_THRESHOLD = 1.0  # Adjust this value based on your track's speed dynamics
     ABS_STEERING_THRESHOLD = 15.0 # Steering angle threshold
-    TOTAL_NUM_STEPS = 300    # Total No of tseps to complete a Lap
+    TOTAL_NUM_STEPS = 300    # Total No of steps to complete a Lap
 
     # Calculate markers that are at varying distances from the center
     marker_1 = 0.1 * track_width
@@ -30,9 +30,9 @@ def reward_function(params):
         if distance_from_center <= marker_1:
             reward += 3.0
         elif distance_from_center <= marker_2:
-            reward += 2.5
-        elif distance_from_center <= marker_3:
             reward += 1.5
+        elif distance_from_center <= marker_3:
+            reward += 0.5
         # elif distance_from_center <= marker_4 and all_wheels_on_track:
         #     reward += 1.0 
         # elif distance_from_center <= marker_5 and all_wheels_on_track:
@@ -60,6 +60,7 @@ def reward_function(params):
             reward += 1.0
         
         # Penalize if car steer too much to prevent zigzag
+        abs_steering = abs(steering_angle)
         if abs_steering > ABS_STEERING_THRESHOLD:
             reward *= 0.8
 
@@ -75,12 +76,12 @@ def reward_function(params):
         reward = 1e-3   # Severe penalty for going off the track 
     
     # Progress reward
-    # progress_reward = progress / 100.0  # Normalize progress to [0, 1]
-    # reward += progress_reward
+    progress_reward = progress / 100.0  # Normalize progress to [0, 1]
+    reward += progress_reward
     
     # Steps Reward
-    if (steps % 100) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
-        reward += 10.0
+    # if (steps % 100) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
+    #     reward += 10.0
 
 
 
