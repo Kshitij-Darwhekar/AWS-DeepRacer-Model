@@ -4,10 +4,6 @@ AWS DeepRacer Student helps high school and college-enrolled students around the
 
 Link : https://aws.amazon.com/deepracer/student/
 
-![image](https://github.com/user-attachments/assets/901d4419-db23-4497-a217-154cb7e3d4ef)
 
+![image](https://github.com/user-attachments/assets/f573f3b6-6edb-4a38-8b9e-7db442ab3d30)
 
-![image](https://github.com/user-attachments/assets/4d8b4e3d-5563-4624-af5b-93a459fa7173)
-
-
-![image](https://github.com/user-attachments/assets/34d6d82a-fcf9-4057-80d3-881e32f2c774)
