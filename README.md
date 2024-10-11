@@ -4,6 +4,11 @@ AWS DeepRacer Student helps high school and college-enrolled students around the
 
 Link : https://aws.amazon.com/deepracer/student/
 
+## Student League Leaderboard (October race)
+
+![image](https://github.com/user-attachments/assets/15f14ea9-b0a9-422c-9d6a-7757bceda1da)
+
+
 ## Learning Material
 
 ![image](https://github.com/user-attachments/assets/f573f3b6-6edb-4a38-8b9e-7db442ab3d30)
